@@ -28,11 +28,11 @@ button:hover {
 }
 
 label {
-    min-width: 110px;
+    min-width: 120px;
 }
 
 input {
-    min-width: 160px;
+    min-width: 200px;
     min-height: 20px;
     padding: 0.25rem;
 }
