@@ -1,0 +1,25 @@
+{
+  "dependencies": {
+    "express": "^4.17.3"
+  },
+  "name": "deploymentlab",
+  "version": "1.0.0",
+  "main": "server/index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrewse02/Deployment.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andrewse02/Deployment/issues"
+  },
+  "homepage": "https://github.com/andrewse02/Deployment#readme",
+  "description": ""
+}
