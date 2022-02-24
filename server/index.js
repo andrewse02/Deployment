@@ -6,7 +6,7 @@ const app = express();
 
 const Rollbar = require("rollbar");
 const rollbar = new Rollbar({
-    accessToken: process.env.ACCESS_TOKEN,
+    accessToken: "3542e890b54f446eb0270215e117c9a1",
     captureUncaught: true,
     captureUnhandledRejections: true
 });
