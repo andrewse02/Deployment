@@ -18,9 +18,6 @@ app.use(express.static(path.join(__dirname, "/../client")));
 const port = process.env.PORT || 4005;
 
 app.get("/", (req, res) => {
-    const ip = req.socket.localAddress;
-    console.log(ip);
-    
     rollbar.warning("You are not an absolute unit!");
     res.sendFile(path.join(__dirname, "../client/home.html"));
 });
