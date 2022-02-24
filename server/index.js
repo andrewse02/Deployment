@@ -18,15 +18,17 @@ app.use(express.static(path.join(__dirname, "/../client")));
 const port = process.env.PORT || 4005;
 
 app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "../client/index.html"));
+    const ip = req.socket.remoteAddress;
+    console.log(ip);
+
+    res.sendFile(path.join(__dirname, "../client/home.html"));
 });
 
 app.get("/error", (req, res) => {
     try {
         error("This won't work.");
     } catch (error) {
-        console.error(error);
-        rollbar.error(error);
+        rollbar.critical(error, "Function does not exist!");
     }
 });
 
