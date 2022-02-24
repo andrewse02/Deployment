@@ -18,9 +18,7 @@ app.use(express.static(path.join(__dirname, "/../client")));
 const port = process.env.PORT || 4005;
 
 app.get("/", (req, res) => {
-    const ip = req.socket.remoteAddress;
-    console.log(ip);
-
+    rollbar.warning("You are not an absolute unit!");
     res.sendFile(path.join(__dirname, "../client/home.html"));
 });
 
@@ -31,6 +29,8 @@ app.get("/error", (req, res) => {
         rollbar.critical(error, "Function does not exist!");
     }
 });
+
+app.use(rollbar.errorHandler());
 
 app.listen(port, () => {
     console.log(`Listening on port ${port}...`);
