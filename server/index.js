@@ -21,6 +21,15 @@ app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "../client/index.html"));
 });
 
+app.get("/error", (req, res) => {
+    try {
+        error("This won't work.");
+    } catch (error) {
+        console.error(error);
+        rollbar.error(error);
+    }
+});
+
 app.listen(port, () => {
     console.log(`Listening on port ${port}...`);
 });
